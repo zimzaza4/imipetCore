@@ -1,0 +1,75 @@
+icon:
+  loadSlot:
+    item:
+      lore:
+        - "     &f&l{{petSkill name}}"
+        - ""
+        - "     &8&o点击装载技能到此槽位"
+        - ""
+  point:
+    item:
+      lore:
+        - "     &f&l{{petSkill name}}"
+        - ""
+        - "     &f技能点：&8{{petSkill point}} &f/ &8{{skillOption point}}"
+        - ""
+        - "     &8&o点击赋予技能点"
+        - ""
+  update:
+    item:
+      lore:
+        - "     &f&l{{petSkill name}}"
+        - ""
+        - "     &8&o点击升级技能"
+        - ""
+  updateSelect:
+    item:
+      lore:
+        - "     &f&l{{skillOption name}}"
+        - ""
+        - "     &8&o点击选择将 &f&o{{petSkill name}} &8&o升级为此技能"
+        - ""
+  load:
+    item:
+      lore:
+        - "     &f&l{{petSkill name}}"
+        - ""
+        - "     &f冷却：&8{{petSkill coolDown}} &f秒"
+        - ""
+        - "     &8&o左键点击使用"
+        - "     &8&o右键点击卸载"
+        - ""
+  unload:
+    item:
+      lore:
+        - "     &f&l{{petSkill name}}"
+        - ""
+        - "     &f冷却：&8{{petSkill coolDown}} &f秒"
+        - ""
+        - "     &8&o点击装载技能"
+        - ""
+skill:
+  test:
+    name: 测试技能
+    script: |
+      petSkill launch mm mmtest type none
+    tree:
+      # 所需技能点
+      point: 10
+      # 升级选择新技能
+      select:
+        - example_1
+    # 冷却 (支持JavaScript运算)
+    # point 变量为技能数据的技能点
+    coolDown: "$ 30-point*2"
+    # 图标
+    icon:
+      material: APPLE
+      name: "&f                                    "
+      lore:
+        - "     &f&l{{petSkill name}}"
+        - ""
+  example_1:
+    name: 测试技能1
+    script: |
+      petSkill launch mm mmselecttest type select_target

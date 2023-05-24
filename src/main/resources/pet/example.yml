@@ -1,0 +1,59 @@
+pet:
+  id: test
+  default:
+    attribute:
+      health: 20.22
+      speed: 2.0
+      attack: 0.3
+      hook:
+        - key: 存储1
+          value: "Hello World"
+        - type: ATTRIBUTE_PLUS
+          key: 物理防御
+          value: "2.1"
+    exp: 30
+    # 等级上限
+    level: 66
+  trigger:
+    - type: LEVEL_UP
+      script: |
+        pet max_exp set "$ 30*(pet_level*pet_level*pet_level+5*pet_level)-10"
+        pet attribute attack set pet_attack+0.3*pet_level
+  entityType: PIG
+  addon:
+    - type: NAME
+      select: ADYESHACH
+      height: 2.0
+      lines:
+        - "{{pet name}}"
+        - "Lv.{{pet level}}"
+  action:
+    - id: attack
+      priority: 11
+    - id: walk
+      priority: 10
+    - id: lookowner
+      priority: 9
+  model:
+    select: MODEL_ENGINE
+    id: hour
+    state:
+      - id: attack
+        lerpin: 0
+        lerpout: 1
+        speed: 1.0
+      - id: lookowner
+        lerpin: 0
+        lerpout: 1
+        speed: 1.0
+  item:
+    material: APPLE
+    name: "&f                                    "
+    lore:
+      - "     &f名称：&8{{pet name}}"
+      - ""
+    modelData: 12
+  # 技能系统
+  skill:
+    # 默认装载上限
+    number: 3

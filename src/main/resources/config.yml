@@ -1,0 +1,15 @@
+# 数据存储
+data:
+  # 存储类型 YAML MYSQL
+  type: YAML
+  host: localhost
+  port: 3306
+  user: root
+  password: root
+  database: imipetcore
+  table: imipetcore_table
+
+nms: taboolib
+
+# 调式信息模式
+debug: false

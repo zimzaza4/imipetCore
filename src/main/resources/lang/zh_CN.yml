@@ -1,0 +1,35 @@
+PET_EMPTY_FILE: "&c宠物配置文件夹不存在，现在新建示例配置"
+ACTION_EMPTY_FILE: "&c行为动作配置文件夹不存在，现在新建示例配置"
+
+LOADER_INFO:
+  - "&7[ &ci &7]&r  ┝  &3正在加载插件  &f{0}"
+  - "&7[ &ci &7]&r  ┝  &3当前插件版本  &f{1}"
+
+PLAYER_NOT_ONLINE: "&c玩家 &f{0} &c不在线"
+SEND_PET_TO_PLAYER: "&6已发给玩家 &f{0} &6宠物 &f{1}"
+
+COMMAND_RELOAD: "&7&l[ &c&li &7&l]&f 已重载 &3&lImiPetCore &f插件"
+
+PET_IS_DEAD:
+  - "&f"
+  - "      &a&l宠物引擎"
+  - "&f"
+  - "          &7你的宠物处于死亡状态"
+  - "          &7请进行医疗它"
+  - "&f"
+PET_FOLLOW_TRUE: 跟随
+PET_FOLLOW_FALSE: 未跟随
+
+SKILL_IS_COOL_DOWN:
+  - "&f"
+  - "      &a&l宠物引擎"
+  - "&f"
+  - "          &7技能 &f{0} &7处于冷却中"
+  - "          &7还需要等待 &f{1} &7秒"
+  - "&f"
+
+SKILL_SELECT_TARGET:
+  - subtitle: "&c请右键目标实施技能"
+    type: title
+    title: '{0}'
+    stay: 100
