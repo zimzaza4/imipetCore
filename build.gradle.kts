@@ -52,7 +52,6 @@ repositories {
         url = uri("http://106.13.64.5:8081/repository/maven-public/")
         isAllowInsecureProtocol = true
     }
-//    maven("https://mvnrepository.com/artifact/io.netty/netty-buffer")
 }
 
 dependencies {

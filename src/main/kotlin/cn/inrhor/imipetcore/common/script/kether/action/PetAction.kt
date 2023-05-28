@@ -93,6 +93,11 @@ class PetAction {
                         }
                     }
                 }
+                case("byHurtEntity") {
+                    actionNow {
+                        selectPetData().petEntity?.hurtEntity?: false
+                    }
+                }
                 case("drive") {
                     when (it.expects("type", "has")) {
                         "type" -> {

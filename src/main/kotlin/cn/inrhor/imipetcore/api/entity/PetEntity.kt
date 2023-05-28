@@ -21,10 +21,7 @@ import cn.inrhor.imipetcore.server.ReadManager.adyeshachLoad
 import cn.inrhor.imipetcore.server.ReadManager.decentHologramsLoad
 import eu.decentsoftware.holograms.api.DHAPI
 import ink.ptms.adyeshach.api.AdyeshachAPI
-import org.bukkit.entity.EntityType
-import org.bukkit.entity.LivingEntity
-import org.bukkit.entity.Player
-import org.bukkit.entity.Wolf
+import org.bukkit.entity.*
 import taboolib.common.platform.function.submit
 import taboolib.common5.Baffle
 import taboolib.module.ai.*
@@ -47,6 +44,11 @@ class PetEntity(val owner: Player, val petData: PetData) {
      * 强制播放模型动作
      */
     var actionBaffle: Baffle? = null
+
+    /**
+     * 受到实体伤害
+     */
+    var hurtEntity: Entity? = null
 
     /**
      * 召唤宠物

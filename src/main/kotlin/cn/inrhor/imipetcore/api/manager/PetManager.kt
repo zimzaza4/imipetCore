@@ -14,7 +14,9 @@ import cn.inrhor.imipetcore.common.database.data.*
 import cn.inrhor.imipetcore.common.option.TriggerOption
 import cn.inrhor.imipetcore.common.option.trigger
 import org.bukkit.attribute.Attribute
+import org.bukkit.entity.Entity
 import org.bukkit.entity.Player
+import taboolib.common.platform.function.submit
 
 /**
  * 宠物管理器
@@ -190,6 +192,19 @@ object PetManager {
         }
         PetChangeEvent(this, petData).call()
     }
+
+    /**
+     * 设置受到实体伤害来源的实体 (五秒内)
+     */
+    fun PetEntity.setByHurtEntity(entity: Entity) {
+        // 如果是主人就返回
+        if (entity == owner) return
+        hurtEntity = entity
+        submit(async = true, delay = 100L) {
+            hurtEntity = null
+        }
+    }
+
 
     /**
      * 玩家乘骑宠物
